@@ -3,9 +3,9 @@ package ba.unsa.etf.rpr.tutoriajal7;
 import java.io.Serializable;
 
 public class Grad implements Serializable {
-    String naziv;
-    int brojStanovnika;
-    int[] temperature;
+    private String naziv;
+    private int brojStanovnika;
+    private int[] temperature;
 
     public Grad() {
         naziv = "";
