@@ -1,5 +1,13 @@
 package ba.unsa.etf.rpr.tutoriajal7;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -34,6 +42,19 @@ public class Tutorijal {
 
         return result;
     }
+
+    /*private static UN ucitajXml(List<Grad> gradovi) {
+        Document document = null;
+        try {
+            DocumentBuilder documentReader = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            document = documentReader.parse(new File("drzave.xml"));
+        } catch (Exception e) {
+            throw new RuntimeException("Problem sa citanjem datoteke drzave.xml");
+        }
+
+        NodeList countries = document.getDocumentElement().getChildNodes();
+        for (int i = )
+    }*/
 
     public static void main(String[] args) {
         try {
