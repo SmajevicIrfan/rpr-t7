@@ -36,6 +36,19 @@ public class Tutorijal {
     }
 
     public static void main(String[] args) {
-	// write your code here
+        try {
+            List<Grad> cities = ucitajGradove();
+
+            for (Grad city : cities) {
+                System.out.print(city.getNaziv() + ": ");
+                for (double temperature : city.getTemperature()) {
+                    System.out.print(temperature + " ");
+                }
+
+                System.out.println();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Datoteka ulaz.txt ne postoji ili se ne može otvoriti");
+        }
     }
 }
