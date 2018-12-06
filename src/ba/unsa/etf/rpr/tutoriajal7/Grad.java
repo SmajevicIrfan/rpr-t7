@@ -5,18 +5,18 @@ import java.io.Serializable;
 public class Grad implements Serializable {
     private String naziv;
     private int brojStanovnika;
-    private int[] temperature;
+    private double[] temperature;
 
     public Grad() {
         naziv = "";
         brojStanovnika = 0;
-        temperature = new int[1000];
+        temperature = new double[1000];
     }
 
     public Grad(String naziv, int brojStanovnika) {
         this.naziv = naziv;
         this.brojStanovnika = brojStanovnika;
-        temperature = new int[1000];
+        temperature = new double[1000];
     }
 
     public String getNaziv() {
@@ -35,11 +35,11 @@ public class Grad implements Serializable {
         this.brojStanovnika = brojStanovnika;
     }
 
-    public int[] getTemperature() {
+    public double[] getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(int[] temperature) {
+    public void setTemperature(double[] temperature) {
         this.temperature = temperature;
     }
 }
