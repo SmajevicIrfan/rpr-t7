@@ -9,13 +9,9 @@ import java.util.Scanner;
 
 public class Tutorijal {
 
-    public static List<Grad> ucitajGradove() throws FileNotFoundException {
+    private static List<Grad> ucitajGradove() throws FileNotFoundException {
         Scanner scanner;
-        try {
-            scanner = new Scanner(new FileReader("mjerenja.txt"));
-        } catch (FileNotFoundException e) {
-            throw new FileNotFoundException("Datoteka ulaz.txt ne postoji ili se ne može otvoriti");
-        }
+        scanner = new Scanner(new FileReader("mjerenja.txt"));
 
         List<Grad> result = new ArrayList<>();
 
@@ -27,7 +23,7 @@ public class Tutorijal {
 
             String[] values = line.split(",");
             Grad newCity = new Grad();
-            newCity.setNaziv(values[0]);
+            newCity.setNaziv(values[0].trim());
             newCity.setTemperature(Arrays.stream(values)
                     .skip(1)
                     .limit(1000)
