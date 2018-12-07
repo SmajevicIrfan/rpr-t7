@@ -8,8 +8,10 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.beans.XMLEncoder;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -91,10 +93,19 @@ public class Tutorijal {
         return response;
     }
 
+    private static void zapisiXml(UN un) {
+        try (XMLEncoder output = new XMLEncoder(new FileOutputStream("un.xml"))) {
+            output.writeObject(un);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         try {
             List<Grad> cities = ucitajGradove();
             UN un = ucitajXml(cities);
+            zapisiXml(un);
 
             for (Drzava country : un.getDrzave()) {
                 System.out.println(country.getNaziv());
