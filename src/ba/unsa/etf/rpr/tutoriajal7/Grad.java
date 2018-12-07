@@ -42,4 +42,12 @@ public class Grad implements Serializable {
     public void setTemperature(double[] temperature) {
         this.temperature = temperature;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Grad))
+            return false;
+
+        return this.getNaziv().equals(((Grad) obj).getNaziv());
+    }
 }
